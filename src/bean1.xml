@@ -13,6 +13,18 @@
 		http://www.springframework.org/schema/aop/spring-aop-3.2.xsd 
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd ">
+	
+	<!--  第一步配置事务管理器 -->
+	<bean id="transactionManager2" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<!-- 第二步 开启事务注解 -->
+	<tx:annotation-driven transaction-manager="transactionManager2"/>
+	
+	
+	
+	
 	<bean id="ordersService" class="cn.itcast.service.OrdersService">
 		<property name="ordersDao" ref="ordersDao"></property>
 	</bean>

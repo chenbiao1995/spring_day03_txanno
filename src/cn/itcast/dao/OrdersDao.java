@@ -13,12 +13,12 @@ public class OrdersDao {
 	//少钱的方法
 	public void lessMoney() {
 		String sql = "update account set salary=salary-? where username=?";
-		jdbcTemplate.update(sql,1000,"chen");
+		jdbcTemplate.update(sql,10000,"chen");
 	}
 	//多钱的方法
 	public void moreMoney() {
 		String sql = "update account set salary=salary+? where username=?";
-		jdbcTemplate.update(sql,1000,"biao");
+		jdbcTemplate.update(sql,10000,"biao");
 
 	}
 }
